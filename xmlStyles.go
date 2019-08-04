@@ -209,12 +209,12 @@ type xlsxCellStyleXfs struct {
 // xlsxXf directly maps the xf element. A single xf element describes all of the
 // formatting for a cell.
 type xlsxXf struct {
-	ApplyAlignment    bool            `xml:"applyAlignment,attr"`
-	ApplyBorder       bool            `xml:"applyBorder,attr"`
-	ApplyFill         bool            `xml:"applyFill,attr"`
-	ApplyFont         bool            `xml:"applyFont,attr"`
-	ApplyNumberFormat bool            `xml:"applyNumberFormat,attr"`
-	ApplyProtection   bool            `xml:"applyProtection,attr"`
+	ApplyAlignment    int             `xml:"applyAlignment,attr"`
+	ApplyBorder       int             `xml:"applyBorder,attr"`
+	ApplyFill         int             `xml:"applyFill,attr"`
+	ApplyFont         int             `xml:"applyFont,attr"`
+	ApplyNumberFormat int             `xml:"applyNumberFormat,attr"`
+	ApplyProtection   int             `xml:"applyProtection,attr"`
 	BorderID          int             `xml:"borderId,attr"`
 	FillID            int             `xml:"fillId,attr"`
 	FontID            int             `xml:"fontId,attr"`

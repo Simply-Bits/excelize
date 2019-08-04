@@ -2265,19 +2265,21 @@ func setCellXfs(style *xlsxStyleSheet, fontID, numFmtID, fillID, borderID int, a
 	var xf xlsxXf
 	xf.FontID = fontID
 	if fontID != 0 {
-		xf.ApplyFont = true
+		xf.ApplyFont = 1
 	}
 	xf.NumFmtID = numFmtID
 	if numFmtID != 0 {
-		xf.ApplyNumberFormat = true
+		xf.ApplyNumberFormat = 1
 	}
 	xf.FillID = fillID
 	xf.BorderID = borderID
 	style.CellXfs.Count++
 	xf.Alignment = alignment
-	xf.ApplyAlignment = applyAlignment
+	if applyAlignment {
+		xf.ApplyAlignment = 1
+	}
 	if applyProtection {
-		xf.ApplyProtection = applyProtection
+		xf.ApplyProtection = 1
 		xf.Protection = protection
 	}
 	xfID := 0
